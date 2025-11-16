@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Premium Black Base */
+    --background: 0 0% 0%;
+    --foreground: 36 14% 96%;
+
+    /* Luxury Black Cards */
+    --card: 0 0% 4%;
+    --card-foreground: 36 14% 96%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 36 14% 96%;
+
+    /* Gold Accent - Metallic */
+    --primary: 43 74% 53%;
+    --primary-foreground: 0 0% 0%;
+    
+    /* Gold Gradient Points */
+    --gold-start: 43 74% 53%;
+    --gold-end: 44 65% 85%;
+
+    /* Cream Background (photo stage) */
+    --secondary: 40 33% 97%;
+    --secondary-foreground: 0 0% 4%;
+
+    /* Muted Cream Text */
+    --muted: 0 0% 8%;
+    --muted-foreground: 36 10% 85%;
+
+    /* Accent Cream */
+    --accent: 0 0% 8%;
+    --accent-foreground: 36 14% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 36 14% 96%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 43 74% 53%;
+
+    --radius: 1rem;
+
+    /* Custom Design Tokens */
+    --luxury-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+    --gold-glow: 0 0 40px rgba(212, 175, 55, 0.4);
+    --transition-smooth: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --sidebar-background: 0 0% 2%;
+    --sidebar-foreground: 36 14% 96%;
+    --sidebar-primary: 43 74% 53%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: 36 14% 96%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 43 74% 53%;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 36 14% 96%;
+    --card: 0 0% 4%;
+    --card-foreground: 36 14% 96%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 36 14% 96%;
+    --primary: 43 74% 53%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 40 33% 97%;
+    --secondary-foreground: 0 0% 4%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 36 10% 85%;
+    --accent: 0 0% 8%;
+    --accent-foreground: 36 14% 96%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 36 14% 96%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 43 74% 53%;
+    --sidebar-background: 0 0% 2%;
+    --sidebar-foreground: 36 14% 96%;
+    --sidebar-primary: 43 74% 53%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: 36 14% 96%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 43 74% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', 'Work Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', 'Cormorant', serif;
+  }
+}
+
+@layer utilities {
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(var(--gold-start)), hsl(var(--gold-end)));
+  }
+  
+  .gold-text {
+    background: linear-gradient(135deg, hsl(var(--gold-start)), hsl(var(--gold-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hover-scale {
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.03);
+  }
+
+  .gold-glow-hover:hover {
+    box-shadow: var(--gold-glow);
+  }
+
+  .luxury-shadow {
+    box-shadow: var(--luxury-shadow);
+  }
+}
