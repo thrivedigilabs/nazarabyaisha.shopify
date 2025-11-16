@@ -26,7 +26,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <h1 className="font-serif text-2xl gold-text tracking-wide">
-              Nazara by Aisha
+              NAZARA BY AISHA
             </h1>
           </Link>
 
